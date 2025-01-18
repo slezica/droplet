@@ -9,6 +9,3 @@ mkdir -p "$TEMP"
 
 # Substitute the variable in the config template:
 envsubst < nginx.template.conf > "$TEMP/nginx.conf"
-
-# Go!
-/usr/bin/env nginx -c "$TEMP/nginx.conf"
