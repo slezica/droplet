@@ -9,7 +9,7 @@ mkdir -p "$TEMP"
 echo "Using temporary directory at '$TEMP'"
 
 # Substitute the variable in the config template:
-envsubst < nginx.template.conf > "$TEMP/nginx.conf"
+envsubst '${TEMP}' < nginx.template.conf > "$TEMP/nginx.conf"
 
 # Go!
 /usr/bin/env nginx -T -c "$TEMP/nginx.conf"
