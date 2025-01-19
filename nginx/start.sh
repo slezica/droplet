@@ -12,4 +12,4 @@ echo "Using temporary directory at '$TEMP'"
 envsubst '${TEMP}' < nginx.template.conf > "$TEMP/nginx.conf"
 
 # Go!
-/usr/bin/env nginx -T -c "$TEMP/nginx.conf"
+/usr/bin/env nginx -c "$TEMP/nginx.conf"
