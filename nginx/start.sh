@@ -4,12 +4,11 @@
 cd "$(dirname "$0")"
 
 # Create temporary directory and enviroment variable:
-export TEMP="$(pwd)/temp"
-mkdir -p "$TEMP"
-echo "Using temporary directory at '$TEMP'"
+mkdir -p "tmp"
+mkdir -p "log"
 
 # Substitute the variable in the config template:
-envsubst '${TEMP}' < nginx.template.conf > "$TEMP/nginx.conf"
+envsubst '${PWD}' < nginx.template.conf > "tmp/nginx.conf"
 
 # Go!
-/usr/bin/env nginx -c "$TEMP/nginx.conf"
+/usr/bin/env nginx -c "tmp/nginx.conf"
