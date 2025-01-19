@@ -8,7 +8,7 @@ mkdir -p "tmp"
 mkdir -p "log"
 
 # Substitute the variable in the config template:
-envsubst '${PWD}' < nginx.template.conf > "tmp/nginx.conf"
+envsubst '${PWD}' < nginx.template.conf > "${PWD}/tmp/nginx.conf"
 
 # Go!
-/usr/bin/env nginx -c "tmp/nginx.conf"
+/usr/bin/env nginx -c "${PWD}/tmp/nginx.conf"
