@@ -30,7 +30,3 @@ new.salezica.io {
     encode gzip
     reverse_proxy localhost:4001
 }
-
-*.salezica.io {
-    respond "Not Found" 404
-}
