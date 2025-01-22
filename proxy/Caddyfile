@@ -7,16 +7,16 @@
     email salezica@gmail.com
 }
 
-dashi.salezica.io {
-    encode gzip
-    reverse_proxy localhost:4000
-}
-
-new.salezica.io {
+salezica.io {
     encode gzip
 
     @needs_trailing_slash path_regexp /[^/.]+[^/]$
     rewrite @needs_trailing_slash {path}/
 
     reverse_proxy localhost:4001
+}
+
+dashi.salezica.io {
+    encode gzip
+    reverse_proxy localhost:4000
 }
