@@ -14,5 +14,9 @@ dashi.salezica.io {
 
 new.salezica.io {
     encode gzip
+
+    @needs_trailing_slash path_regexp /[^/.]+[^/]$
+    rewrite @needs_trailing_slash {path}/
+
     reverse_proxy localhost:4001
 }
