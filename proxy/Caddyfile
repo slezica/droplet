@@ -20,3 +20,7 @@ dashi.salezica.io {
     encode gzip
     reverse_proxy localhost:4000
 }
+
+tunnel.salezica.io {
+    reverse_proxy localhost:5000
+}
